@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prisley Calculator</title>
+<style>
+body{font-family:Arial;background:#0f172a;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0}
+.box{background:white;padding:20px;border-radius:20px;width:300px;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+h2{text-align:center;color:#0f172a}
+#display{width:100%;height:60px;font-size:28px;text-align:right;border:2px solid #ddd;border-radius:10px;padding:10px;margin-bottom:15px;box-sizing:border-box}
+.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+button{height:60px;font-size:20px;border:none;border-radius:10px;cursor:pointer;background:#e2e8f0}
+button.op{background:#38bdf8;color:white}
+button.eq{background:#0f172a;color:white;grid-column:span 2}
+button.clr{background:#ef4444;color:white}
+button:active{transform:scale(0.95)}
+p{text-align:center;margin-top:15px;color:#64748b;font-size:12px}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Prisley Calculator 🧮</h2>
+<input id="display" disabled>
+<div class="buttons">
+<button onclick="c()" class="clr">C</button>
+<button onclick="d()">DEL</button>
+<button onclick="a('%')">%</button>
+<button onclick="a('/')" class="op">/</button>
+<button onclick="a('7')">7</button>
+<button onclick="a('8')">8</button>
+<button onclick="a('9')">9</button>
+<button onclick="a('*')" class="op">x</button>
+<button onclick="a('4')">4</button>
+<button onclick="a('5')">5</button>
+<button onclick="a('6')">6</button>
+<button onclick="a('-')" class="op">-</button>
+<button onclick="a('1')">1</button>
+<button onclick="a('2')">2</button>
+<button onclick="a('3')">3</button>
+<button onclick="a('+')" class="op">+</button>
+<button onclick="a('0')">0</button>
+<button onclick="a('.')">.</button>
+<button onclick="e()" class="eq">=</button>
+</div>
+<p>Made with ❤️ by prisley-tech</p>
+</div>
+<script>
+let dis=document.getElementById('display');
+function a(v){dis.value+=v}
+function c(){dis.value=''}
+function d(){dis.value=dis.value.slice(0,-1)}
+function e(){try{dis.value=eval(dis.value)}catch{dis.value='Error'}}
+</script>
+</body>
+</html>
